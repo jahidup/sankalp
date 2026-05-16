@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Sankalp Digital Pathshala - Premium AI-Powered Smart Education Platform. Future-ready learning with AI, Robotics, JEE, NEET preparation.">
+    <meta name="keywords" content="Sankalp Digital Pathshala, AI education, JEE coaching, NEET preparation, robotics learning, smart classroom, digital pathshala">
+    <meta property="og:title" content="Sankalp Digital Pathshala | Premium AI-Powered Education">
+    <meta property="og:description" content="Transform your future with AI-powered smart learning. India's most innovative education platform.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://sankalppathshala.com/">
+    <title>Sankalp Digital Pathshala | Premium AI-Powered Smart Education</title>
+    <style>
+        :root {
+            --primary: #38BDF8;
+            --primary-dark: #06B6D4;
+            --accent: #4F46E5;
+            --glow: #7DD3FC;
+            --dark: #0F172A;
+            --light: #F8FCFF;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --radius-sm: 0.5rem;
+            --radius: 0.75rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1.5rem;
+            --radius-2xl: 2rem;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --font-mono: 'SF Mono', 'Cascadia Code', monospace;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
+            --glow-primary: 0 0 30px rgba(56, 189, 248, 0.4);
+            --glow-accent: 0 0 30px rgba(79, 70, 229, 0.35);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--light);
+            color: var(--gray-800);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Animated Background */
+        .bg-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+            animation: floatOrb 20s ease-in-out infinite;
+        }
+        .bg-orb-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--glow);
+            top: -150px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+        .bg-orb-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            bottom: -100px;
+            right: -80px;
+            animation-delay: -7s;
+            opacity: 0.25;
+        }
+        .bg-orb-3 {
+            width: 350px;
+            height: 350px;
+            background: var(--primary);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -14s;
+            opacity: 0.2;
+        }
+
+        @keyframes floatOrb {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(40px, -30px) scale(1.08);
+            }
+            50% {
+                transform: translate(-20px, 20px) scale(0.94);
+            }
+            75% {
+                transform: translate(-35px, -15px) scale(1.05);
+            }
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            padding: 0 1.5rem;
+        }
+        .navbar.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+            gap: 1rem;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .nav-logo img {
+            height: 42px;
+            width: auto;
+            border-radius: 8px;
+        }
+        .nav-logo span {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #fff;
+            letter-spacing: -0.3px;
+            white-space: nowrap;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            padding: 0.5rem 0.85rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            white-space: nowrap;
+            letter-spacing: 0.1px;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: rgba(56, 189, 248, 0.2);
+            color: #fff;
+        }
+        .btn-nav {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff !important;
+            padding: 0.6rem 1.4rem !important;
+            border-radius: 2rem !important;
+            font-weight: 600 !important;
+            box-shadow: var(--glow-primary);
+            transition: var(--transition);
+        }
+        .btn-nav:hover {
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.55);
+            transform: translateY(-1px);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            width: 26px;
+            height: 2.5px;
+            background: #fff;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media(max-width:1024px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -320px;
+                width: 300px;
+                height: 100vh;
+                background: rgba(15, 23, 42, 0.97);
+                backdrop-filter: blur(30px);
+                flex-direction: column;
+                padding: 5rem 1.5rem 2rem;
+                gap: 0.5rem;
+                transition: var(--transition);
+                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4);
+                overflow-y: auto;
+            }
+            .nav-links.open {
+                right: 0;
+            }
+            .nav-links a {
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+                width: 100%;
+                text-align: left;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+        @media(max-width:480px) {
+            .nav-links {
+                width: 85vw;
+                right: -85vw;
+            }
+            .nav-logo span {
+                font-size: 0.95rem;
+            }
+            .nav-logo img {
+                height: 32px;
+            }
+            .navbar {
+                padding: 0 0.75rem;
+            }
+            .nav-container {
+                height: 56px;
+            }
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            min-height: 85vh;
+        }
+        .hero-content h1 {
+            font-size: clamp(2rem, 4.5vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+            margin-bottom: 1.25rem;
+        }
+        .hero-content h1 .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-content p {
+            font-size: clamp(1rem, 1.3vw, 1.2rem);
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            max-width: 550px;
+            line-height: 1.7;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.75rem 1.6rem;
+            border-radius: 2.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+            transition: var(--transition);
+            letter-spacing: 0.1px;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            box-shadow: var(--glow-primary);
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 45px rgba(56, 189, 248, 0.5);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-outline:hover {
+            background: rgba(56, 189, 248, 0.08);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .btn-glass {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--dark);
+            backdrop-filter: blur(10px);
+        }
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .hero-3d {
+            width: 100%;
+            max-width: 550px;
+            aspect-ratio: 1/1;
+            background: radial-gradient(circle at center, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: float3d 6s ease-in-out infinite;
+        }
+        @keyframes float3d {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        .hero-3d-inner {
+            width: 70%;
+            aspect-ratio: 1/1;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.3), rgba(79, 70, 229, 0.25));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            box-shadow: 0 0 80px rgba(56, 189, 248, 0.3);
+        }
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: particleFloat 8s ease-in-out infinite;
+        }
+        @keyframes particleFloat {
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-40px) translateX(15px);
+                opacity: 1;
+            }
+        }
+
+        @media(max-width:768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 2rem 1rem 3rem;
+                min-height: auto;
+                gap: 1.5rem;
+            }
+            .hero-content p {
+                max-width: 100%;
+                margin: 0 auto 1.5rem;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-3d {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            .hero-3d-inner {
+                font-size: 4rem;
+            }
+        }
+        @media(max-width:480px) {
+            .hero-content h1 {
+                font-size: 1.7rem;
+            }
+            .hero-content p {
+                font-size: 0.95rem;
+            }
+            .btn {
+                padding: 0.65rem 1.2rem;
+                font-size: 0.85rem;
+            }
+            .hero-3d {
+                max-width: 220px;
+            }
+        }
+
+        /* Trust Metrics */
+        .trust-metrics {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .metric-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            transition: var(--transition);
+        }
+        .metric-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl), 0 0 30px rgba(56, 189, 248, 0.15);
+        }
+        .metric-number {
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            margin-top: 0.4rem;
+            font-weight: 500;
+        }
+        @media(max-width:768px) {
+            .trust-metrics {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                padding: 1rem 1rem 2.5rem;
+            }
+        }
+        @media(max-width:480px) {
+            .trust-metrics {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.75rem;
+            }
+            .metric-card {
+                padding: 1.25rem 0.75rem;
+            }
+        }
+
+        /* Section */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .section-header h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        .section-header p {
+            color: var(--gray-500);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 1.75rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .card:hover::before {
+            opacity: 1;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+        .card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        .card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: #cbd5e1;
+            padding: 3rem 1.5rem 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer h4 {
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.4rem;
+            transition: var(--transition);
+        }
+        .footer a:hover {
+            color: var(--primary);
+        }
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* Floating Chat Button */
+        .float-chat-btn {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 0.85rem 1.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(56, 189, 248, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            animation: pulseBtn 2.5s ease-in-out infinite;
+        }
+        .float-chat-btn:hover {
+            box-shadow: 0 12px 40px rgba(56, 189, 248, 0.55);
+            transform: translateY(-2px);
+        }
+        @keyframes pulseBtn {
+            0%,
+            100% {
+                box-shadow: 0 8px 30px rgba(56, 189, 248, 0.4);
+            }
+            50% {
+                box-shadow: 0 8px 50px rgba(56, 189, 248, 0.65);
+            }
+        }
+        @media(max-width:480px) {
+            .float-chat-btn {
+                bottom: 16px;
+                right: 12px;
+                padding: 0.7rem 1.2rem;
+                font-size: 0.8rem;
+                gap: 0.3rem;
+            }
+        }
+
+        /* Glass Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--glass-shadow);
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--gray-700);
+            font-size: 0.9rem;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius);
+            font-size: 0.95rem;
+            font-family: var(--font-sans);
+            transition: var(--transition);
+            background: var(--white);
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+        }
+        .form-group .error-msg {
+            color: #ef4444;
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .modal {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-500);
+        }
+
+        /* Result Card */
+        .result-cert {
+            background: linear-gradient(135deg, #fffdf7, #fffefc);
+            border: 3px solid var(--primary);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            position: relative;
+            box-shadow: var(--shadow-xl);
+        }
+        .result-cert .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 6rem;
+            color: rgba(56, 189, 248, 0.05);
+            pointer-events: none;
+            font-weight: 900;
+            white-space: nowrap;
+        }
+        .certified-stamp {
+            display: inline-block;
+            border: 3px solid var(--accent);
+            color: var(--accent);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transform: rotate(-5deg);
+            box-shadow: 0 0 15px rgba(79, 70, 229, 0.2);
+        }
+
+        /* Responsive Table */
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th,
+        td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        th {
+            background: var(--gray-50);
+            font-weight: 700;
+            color: var(--gray-700);
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        @media(max-width:600px) {
+            table {
+                font-size: 0.8rem;
+            }
+            th,
+            td {
+                padding: 0.5rem 0.6rem;
+            }
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 3000;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius);
+            color: #fff;
+            font-weight: 600;
+            animation: slideIn 0.3s ease;
+            box-shadow: var(--shadow-lg);
+            max-width: 400px;
+        }
+        .toast-success {
+            background: #10b981;
+        }
+        .toast-error {
+            background: #ef4444;
+        }
+        .toast-info {
+            background: var(--primary);
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(120%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            display: inline-block;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Admin Sidebar */
+        .admin-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        .admin-sidebar {
+            width: 260px;
+            background: var(--dark);
+            color: #fff;
+            padding: 1.5rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+        .admin-sidebar h3 {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+        .admin-sidebar a {
+            display: block;
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 0.7rem 1rem;
+            border-radius: var(--radius);
+            margin-bottom: 0.3rem;
+            transition: var(--transition);
+        }
+        .admin-sidebar a:hover,
+        .admin-sidebar a.active {
+            background: rgba(56, 189, 248, 0.2);
+            color: #fff;
+        }
+        .admin-main {
+            flex: 1;
+            padding: 2rem;
+            overflow-x: auto;
+        }
+        @media(max-width:768px) {
+            .admin-sidebar {
+                position: fixed;
+                left: -280px;
+                top: 0;
+                height: 100vh;
+                z-index: 1500;
+            }
+            .admin-sidebar.open {
+                left: 0;
+            }
+            .admin-main {
+                padding: 1rem;
+            }
+        }
+
+        /* Chat Interface */
+        .chat-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 75vh;
+            min-height: 500px;
+        }
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .chat-header .avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        .chat-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            background: #f8fafc;
+        }
+        .chat-msg {
+            max-width: 78%;
+            padding: 0.75rem 1rem;
+            border-radius: 1.2rem;
+            line-height: 1.5;
+            font-size: 0.9rem;
+            animation: msgIn 0.25s ease;
+        }
+        @keyframes msgIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .chat-msg.bot {
+            background: #e8f4fd;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+        .chat-msg.user {
+            background: var(--primary);
+            color: #fff;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+        .chat-input-area {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--gray-200);
+            display: flex;
+            gap: 0.5rem;
+            background: #fff;
+        }
+        .chat-input-area input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border-radius: 2rem;
+            border: 2px solid var(--gray-200);
+            font-size: 0.9rem;
+        }
+        .chat-input-area button {
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            border: none;
+            background: var(--primary);
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        @media(max-width:480px) {
+            .chat-container {
+                height: 85vh;
+                border-radius: 0;
+            }
+            .chat-msg {
+                max-width: 90%;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Utility */
+        .hidden {
+            display: none !important;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mt-2 {
+            margin-top: 2rem;
+        }
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+        .gap-1 {
+            gap: 1rem;
+        }
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Orbs -->
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="" alt="Sankalp Digital Pathshala Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <span style="display:none;">🔷 SANKALP</span>
+                <span>🔷 SANKALP DIGITAL PATHSHALA</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="ai-learning.html">AI Learning</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="admissions.html" class="btn-nav">Enroll Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Your <span class="gradient-text">AI-Powered</span> Path to Academic Excellence</h1>
+            <p>Experience the future of learning with smart classrooms, AI tutoring, robotics labs, and expert guidance for JEE, NEET & beyond. Where tradition meets technology.</p>
+            <div class="hero-buttons">
+                <a href="programs.html" class="btn btn-primary">Explore Programs</a>
+                <a href="sankalp-sathi.html" class="btn btn-outline">🤖 Talk to Sankalp Sathi</a>
+                <a href="results.html" class="btn btn-glass">📊 View Results</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-3d">
+                <div class="hero-3d-inner">🧠</div>
+                <div class="particles">
+                    <span class="particle" style="top:15%;left:20%;animation-delay:0s;"></span>
+                    <span class="particle" style="top:25%;right:18%;animation-delay:1.5s;"></span>
+                    <span class="particle" style="bottom:20%;left:25%;animation-delay:3s;"></span>
+                    <span class="particle" style="bottom:30%;right:15%;animation-delay:4.5s;"></span>
+                    <span class="particle" style="top:50%;left:10%;animation-delay:2s;"></span>
+                    <span class="particle" style="top:60%;right:10%;animation-delay:5s;"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Metrics -->
+    <section class="trust-metrics" id="metrics">
+        <div class="metric-card">
+            <div class="metric-number" data-target="15000">0</div>
+            <div class="metric-label">Students Trained</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-number" data-target="5000">0</div>
+            <div class="metric-label">Success Stories</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-number" data-target="35">0</div>
+            <div class="metric-label">Programs</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-number" data-target="1200">0</div>
+            <div class="metric-label">AI Learning Projects</div>
+        </div>
+    </section>
+
+    <!-- Why Choose Sankalp -->
+    <section class="section" id="why-us">
+        <div class="section-header">
+            <h2>Why Choose Sankalp Digital Pathshala?</h2>
+            <p>We combine cutting-edge AI technology with proven teaching methodologies</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🖥️</div>
+                <h3>Smart Classrooms</h3>
+                <p>Digital boards and interactive learning environments for immersive education.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤖</div>
+                <h3>AI-Powered Learning</h3>
+                <p>Personalized AI tutoring with our Sankalp Sathi assistant available 24/7.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔬</div>
+                <h3>Robotics & STEM</h3>
+                <p>Hands-on robotics labs and STEM projects for future-ready skills.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>JEE & NEET Expert Guidance</h3>
+                <p>Proven strategies and expert mentorship for competitive exam success.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Computer Education</h3>
+                <p>From basics to advanced coding - complete digital literacy programs.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">👨‍🏫</div>
+                <h3>Expert Mentorship</h3>
+                <p>Learn from experienced faculty dedicated to your academic growth.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌍</div>
+                <h3>Real-World Exposure</h3>
+                <p>Workshops, industry visits, and practical learning experiences.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Academic Excellence</h3>
+                <p>Comprehensive programs from Class 6 to 12 with proven results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Preview -->
+    <section class="section" id="programs-preview">
+        <div class="section-header">
+            <h2>Our Programs</h2>
+            <p>Comprehensive learning paths for every stage of academic journey</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🌱</div>
+                <h3>Foundation (Class 6-8)</h3>
+                <p>Build strong fundamentals with interactive and engaging learning methods.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📖</div>
+                <h3>Academic Excellence (Class 9-10)</h3>
+                <p>Master core subjects with advanced teaching and regular assessments.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎓</div>
+                <h3>Senior Secondary (11-12)</h3>
+                <p>Specialized streams with focus on board exams and career preparation.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏆</div>
+                <h3>JEE | NEET | Competitive</h3>
+                <p>Intensive coaching with mock tests, analytics, and expert strategies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Learning Preview -->
+    <section class="section" id="ai-preview">
+        <div class="section-header">
+            <h2>🤖 AI-Powered Learning</h2>
+            <p>Experience the future of education with our AI question solver and smart assistant</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">📝</div>
+                <h3>AI Question Solver</h3>
+                <p>Get instant step-by-step solutions for text, image, and PDF questions.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🗣️</div>
+                <h3>Sankalp Sathi AI</h3>
+                <p>Your 24/7 academic companion for personalized learning support.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+        <div class="section-header">
+            <h2>What Our Students Say</h2>
+            <p>Real stories from our successful learners</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <p style="font-style:italic;">"Sankalp's AI learning tools helped me crack JEE with top rank. The personalized attention is unmatched!"</p>
+                <strong style="color:var(--primary);">- Priya Sharma, JEE Advanced 2024</strong>
+            </div>
+            <div class="card">
+                <p style="font-style:italic;">"The robotics lab and STEM programs gave me skills that no other institute offered. Truly future-ready!"</p>
+                <strong style="color:var(--primary);">- Arjun Patel, Class 12</strong>
+            </div>
+            <div class="card">
+                <p style="font-style:italic;">"From average scores to NEET qualification - Sankalp's mentorship changed my academic journey completely."</p>
+                <strong style="color:var(--primary);">- Riya Gupta, NEET 2024</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions CTA -->
+    <section class="section text-center" id="admissions-cta">
+        <div class="glass-card" style="padding:3rem 2rem;max-width:700px;margin:0 auto;">
+            <h2 style="font-size:1.8rem;margin-bottom:1rem;">🚀 Ready to Transform Your Future?</h2>
+            <p style="color:var(--gray-500);margin-bottom:1.5rem;">Join Sankalp Digital Pathshala and experience the power of AI-driven education.</p>
+            <a href="admissions.html" class="btn btn-primary" style="font-size:1.1rem;padding:0.9rem 2rem;">Apply for Admission Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4>Sankalp Digital Pathshala</h4>
+                <p style="font-size:0.85rem;">Premium AI-powered education for the next generation of innovators and achievers.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="programs.html">Programs</a>
+                <a href="results.html">Results</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div>
+                <h4>Programs</h4>
+                <a href="programs.html">Foundation</a>
+                <a href="programs.html">JEE Preparation</a>
+                <a href="programs.html">NEET Coaching</a>
+                <a href="ai-learning.html">AI Learning</a>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <a href="contact.html">📧 Email Us</a>
+                <a href="contact.html">📞 Call Us</a>
+                <a href="sankalp-sathi.html">🤖 Sankalp Sathi</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Sankalp Digital Pathshala. All rights reserved. | AI-Powered Premium Education Platform
+        </div>
+    </footer>
+
+    <!-- Floating Chat Button -->
+    <a href="sankalp-sathi.html" class="float-chat-btn" id="floatChatBtn" title="Talk to Sankalp Sathi">
+        🤖 Talk to Sankalp Sathi
+    </a>
+
+    <!-- Toast Container -->
+    <div id="toastContainer"></div>
+
+    <script>
+        // ============================================
+        // app.js - COMPLETE FRONTEND LOGIC
+        // ============================================
+
+        (function() {
+            // --- NAVBAR ---
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            const navbar = document.getElementById('navbar');
+
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navLinks.classList.toggle('open');
+                });
+                // Close on link click
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('open');
+                    });
+                });
+            }
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) {
+                    navbar?.classList.add('scrolled');
+                } else {
+                    navbar?.classList.remove('scrolled');
+                }
+            });
+
+            // --- COUNTER ANIMATION ---
+            const metricNumbers = document.querySelectorAll('.metric-number[data-target]');
+            const observerOptions = { threshold: 0.5 };
+
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.getAttribute('data-target'));
+                        animateCounter(el, target);
+                        counterObserver.unobserve(el);
+                    }
+                });
+            }, observerOptions);
+
+            metricNumbers.forEach(el => counterObserver.observe(el));
+
+            function animateCounter(el, target) {
+                let current = 0;
+                const duration = 1800;
+                const stepTime = Math.max(20, Math.floor(duration / target));
+                const increment = Math.ceil(target / (duration / stepTime));
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    el.textContent = current.toLocaleString('en-IN') + '+';
+                }, stepTime);
+            }
+
+            // --- TOAST SYSTEM ---
+            window.showToast = function(message, type = 'info') {
+                const container = document.getElementById('toastContainer');
+                const toast = document.createElement('div');
+                toast.className = `toast toast-${type}`;
+                toast.textContent = message;
+                container.appendChild(toast);
+                setTimeout(() => {
+                    toast.style.opacity = '0';
+                    toast.style.transform = 'translateX(120%)';
+                    toast.style.transition = '0.3s ease';
+                    setTimeout(() => toast.remove(), 300);
+                }, 3500);
+            };
+
+            // --- FLOATING CHAT BUTTON HIDE ON CHAT PAGE ---
+            const floatBtn = document.getElementById('floatChatBtn');
+            if (floatBtn && window.location.pathname.includes('sankalp-sathi')) {
+                floatBtn.style.display = 'none';
+            }
+
+            // --- ACTIVE NAV LINK ---
+            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(a => {
+                const href = a.getAttribute('href');
+                if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+                    a.classList.add('active');
+                } else {
+                    a.classList.remove('active');
+                }
+            });
+
+            // --- API BASE URL ---
+            const API_BASE = window.location.origin + '/api';
+
+            // --- HELPER: Get Cookie ---
+            window.getCookie = function(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+                return null;
+            };
+
+            // --- HELPER: Set Cookie ---
+            window.setCookie = function(name, value, days = 7) {
+                const d = new Date();
+                d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+                document.cookie = `${name}=${value};expires=${d.toUTCString()};path=/;SameSite=Lax`;
+            };
+
+            // --- Check Auth State ---
+            window.isLoggedIn = function() {
+                return !!getCookie('auth_token');
+            };
+
+            window.getUserRole = function() {
+                return getCookie('user_role') || 'guest';
+            };
+
+            // --- API Call Helper ---
+            window.apiCall = async function(endpoint, options = {}) {
+                const url = API_BASE + endpoint;
+                const config = {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        ...options.headers,
+                    },
+                    ...options,
+                };
+                if (getCookie('auth_token')) {
+                    config.headers['Authorization'] = `Bearer ${getCookie('auth_token')}`;
+                }
+                try {
+                    const res = await fetch(url, config);
+                    const data = await res.json();
+                    if (!res.ok) throw new Error(data.message || 'Request failed');
+                    return data;
+                } catch (err) {
+                    console.error('API Error:', err);
+                    throw err;
+                }
+            };
+
+            // --- Initialize Page-Specific Logic ---
+            initPageLogic();
+
+            function initPageLogic() {
+                const path = currentPath;
+
+                // Home page - counter already initialized above
+                if (path === 'index.html' || path === '') {
+                    // Additional home page init if needed
+                }
+
+                // Result check page
+                if (path === 'results.html' || path.includes('student-results')) {
+                    initResultCheck();
+                }
+
+                // Sankalp Sathi page
+                if (path.includes('sankalp-sathi')) {
+                    initSankalpSathi();
+                }
+
+                // Admin dashboard
+                if (path.includes('admin-dashboard')) {
+                    initAdminDashboard();
+                }
+
+                // Login page
+                if (path === 'login.html') {
+                    initLogin();
+                }
+
+                // Register page
+                if (path === 'register.html') {
+                    initRegister();
+                }
+            }
+
+            // --- RESULT CHECK ---
+            function initResultCheck() {
+                const resultForm = document.getElementById('resultCheckForm');
+                const resultDisplay = document.getElementById('resultDisplay');
+
+                if (resultForm) {
+                    resultForm.addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        const regNo = document.getElementById('regNoInput')?.value?.trim();
+                        const dob = document.getElementById('dobInput')?.value?.trim();
+
+                        if (!regNo || !dob) {
+                            showToast('Please enter both Registration Number and Date of Birth',
+                                'error');
+                            return;
+                        }
+
+                        // Validate reg no format (8 digit mixed num & alphabets eg: SDP26001)
+                        const regNoRegex = /^[A-Za-z0-9]{6,10}$/;
+                        if (!regNoRegex.test(regNo)) {
+                            showToast(
+                                'Invalid Registration Number format. Use 6-10 characters (letters & numbers) like SDP26001',
+                                'error');
+                            return;
+                        }
+
+                        try {
+                            const data = await apiCall('/student/check-result', {
+                                method: 'POST',
+                                body: JSON.stringify({ regNo, dob }),
+                            });
+
+                            if (data.success && data.result) {
+                                displayResult(data.result, resultDisplay);
+                            } else {
+                                showToast(data.message || 'No result found', 'error');
+                            }
+                        } catch (err) {
+                            showToast(err.message || 'Error fetching result', 'error');
+                        }
+                    });
+                }
+            }
+
+            function displayResult(result, container) {
+                if (!container) return;
+                container.innerHTML = `
+                <div class="result-cert" id="printableResult">
+                    <div class="watermark">SANKALP</div>
+                    <div style="text-align:center;margin-bottom:1.5rem;">
+                        <h2 style="color:var(--dark);">📜 Sankalp Digital Pathshala</h2>
+                        <p style="color:var(--gray-500);">Official Academic Result</p>
+                        <span class="certified-stamp">✅ CERTIFIED</span>
+                    </div>
+                    <hr style="border-color:var(--gray-200);margin:1rem 0;">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;font-size:0.95rem;">
+                        <p><strong>Registration No:</strong> ${result.regNo || result.studentId || 'N/A'}</p>
+                        <p><strong>Student Name:</strong> ${result.name || result.studentName || 'N/A'}</p>
+                        <p><strong>Father's Name:</strong> ${result.fatherName || 'N/A'}</p>
+                        <p><strong>Date of Birth:</strong> ${result.dob || 'N/A'}</p>
+                        <p><strong>Class/Grade:</strong> ${result.grade || result.class || 'N/A'}</p>
+                        <p><strong>Percentage:</strong> ${result.percentage || 'N/A'}%</p>
+                        <p><strong>Rank:</strong> ${result.rank || 'N/A'}</p>
+                        <p><strong>Remarks:</strong> ${result.remarks || 'Excellent'}</p>
+                    </div>
+                    ${result.subjects && result.subjects.length ? `
+                    <div class="table-responsive" style="margin-top:1.5rem;">
+                        <table>
+                            <thead><tr><th>Subject</th><th>Marks</th><th>Max Marks</th></tr></thead>
+                            <tbody>${result.subjects.map(s => `<tr><td>${s.subject}</td><td>${s.marks}</td><td>${s.maxMarks || 100}</td></tr>`).join('')}</tbody>
+                        </table>
+                    </div>` : ''}
+                    <div style="text-align:center;margin-top:1.5rem;">
+                        <p style="font-size:0.8rem;color:var(--gray-400);">This is a digitally certified result from Sankalp Digital Pathshala</p>
+                    </div>
+                </div>
+                <div style="display:flex;gap:1rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap;">
+                    <button class="btn btn-primary" onclick="window.printResult()">🖨️ Download / Print PDF</button>
+                </div>
+                `;
+                container.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            window.printResult = function() {
+                const printContent = document.getElementById('printableResult');
+                if (!printContent) return;
+                const win = window.open('', '_blank', 'width=800,height=600');
+                win.document.write(`
+                <html><head><title>Sankalp Result</title>
+                <style>
+                body{font-family:'Segoe UI',sans-serif;padding:2rem;color:#1f2937;}
+                .result-cert{border:3px solid #38BDF8;border-radius:16px;padding:2rem;position:relative;}
+                .watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-30deg);font-size:6rem;color:rgba(56,189,248,0.05);pointer-events:none;font-weight:900;}
+                .certified-stamp{display:inline-block;border:3px solid #4F46E5;color:#4F46E5;padding:0.5rem 1.2rem;border-radius:50px;font-weight:700;}
+                table{width:100%;border-collapse:collapse;}th,td{padding:0.5rem;border-bottom:1px solid #e5e7eb;text-align:left;}
+                @media print{body{print-color-adjust:exact;-webkit-print-color-adjust:exact;}}
+                </style></head><body>${printContent.outerHTML}</body></html>
+                `);
+                win.document.close();
+                setTimeout(() => win.print(), 300);
+            };
+
+            // --- SANKALP SATHI CHATBOT ---
+            function initSankalpSathi() {
+                const chatBody = document.getElementById('chatBody');
+                const chatInput = document.getElementById('chatInput');
+                const chatSend = document.getElementById('chatSend');
+                const typingIndicator = document.getElementById('typingIndicator');
+
+                if (!chatBody || !chatInput || !chatSend) return;
+
+                let conversationState = {
+                    stage: 'greeting',
+                    firstName: '',
+                    class: '',
+                    interest: '',
+                    phone: '',
+                    parentName: '',
+                    city: '',
+                    email: '',
+                    messages: [],
+                };
+
+                // Initial bot message
+                addBotMessage(
+                    "Hi 👋<br>Welcome to Sankalp Digital Pathshala.<br>I'm <strong>Sankalp Sathi</strong> 😊<br>Your smart academic companion.<br><br>What's your <strong>first name</strong>?"
+                    );
+
+                chatSend.addEventListener('click', handleSend);
+                chatInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') handleSend();
+                });
+
+                function handleSend() {
+                    const msg = chatInput.value.trim();
+                    if (!msg) return;
+                    addUserMessage(msg);
+                    chatInput.value = '';
+                    processMessage(msg);
+                }
+
+                function addBotMessage(text) {
+                    const div = document.createElement('div');
+                    div.className = 'chat-msg bot';
+                    div.innerHTML = text;
+                    chatBody.appendChild(div);
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }
+
+                function addUserMessage(text) {
+                    const div = document.createElement('div');
+                    div.className = 'chat-msg user';
+                    div.textContent = text;
+                    chatBody.appendChild(div);
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                    conversationState.messages.push({ role: 'user', content: text });
+                }
+
+                function showTyping() {
+                    const div = document.createElement('div');
+                    div.className = 'chat-msg bot';
+                    div.id = 'typingMsg';
+                    div.innerHTML = '<span style="display:flex;gap:4px;"><span style="animation:blink 1s infinite;">●</span><span style="animation:blink 1s infinite 0.2s;">●</span><span style="animation:blink 1s infinite 0.4s;">●</span></span>';
+                    chatBody.appendChild(div);
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }
+
+                function hideTyping() {
+                    const el = document.getElementById('typingMsg');
+                    if (el) el.remove();
+                }
+
+                async function processMessage(msg) {
+                    showTyping();
+                    await new Promise(r => setTimeout(r, 600 + Math.random() * 800));
+                    hideTyping();
+
+                    const stage = conversationState.stage;
+
+                    if (stage === 'greeting') {
+                        conversationState.firstName = msg;
+                        conversationState.stage = 'askClass';
+                        addBotMessage(
+                            `Nice to meet you, <strong>${conversationState.firstName}</strong>! 😊<br><br>Which class are you in?<br>• Class 6-12<br>• JEE Aspirant<br>• NEET Aspirant`
+                            );
+                    } else if (stage === 'askClass') {
+                        conversationState.class = msg;
+                        conversationState.stage = 'askInterest';
+                        addBotMessage(
+                            `Great! What interests you the most?<br>• Science<br>• Maths<br>• AI & Robotics<br>• Coding<br>• JEE Preparation<br>• NEET Preparation<br>• Computer Learning<br>• Future Skills`);
+                    } else if (stage === 'askInterest') {
+                        conversationState.interest = msg;
+                        conversationState.stage = 'askPhone';
+                        addBotMessage(
+                            `Awesome choice, ${conversationState.firstName}! 🎯<br><br>I'd love to help you further. Could you share your <strong>phone number</strong> so our team can reach out with personalized guidance?`
+                            );
+                    } else if (stage === 'askPhone') {
+                        conversationState.phone = msg;
+                        conversationState.stage = 'askParent';
+                        addBotMessage(
+                            `Thanks! And what's your <strong>parent's name</strong>? (Or guardian's name)`);
+                    } else if (stage === 'askParent') {
+                        conversationState.parentName = msg;
+                        conversationState.stage = 'askCity';
+                        addBotMessage(`Got it! Which <strong>city</strong> are you from?`);
+                    } else if (stage === 'askCity') {
+                        conversationState.city = msg;
+                        conversationState.stage = 'askEmail';
+                        addBotMessage(
+                            `Almost done! Would you like to share your <strong>email</strong>? (Optional - type 'skip' to continue)`
+                            );
+                    } else if (stage === 'askEmail') {
+                        conversationState.email = msg === 'skip' ? '' : msg;
+                        conversationState.stage = 'complete';
+                        // Save lead
+                        await saveLead(conversationState);
+                        addBotMessage(
+                            `Thank you so much, <strong>${conversationState.firstName}</strong>! 🎉<br><br>I've noted your details. Our team will reach out soon!<br><br>In the meantime, feel free to ask me anything about:<br>• Admissions & Fees<br>• JEE/NEET preparation<br>• AI Learning programs<br>• Robotics & STEM<br>• Or any academic question!`
+                            );
+                    } else if (stage === 'complete') {
+                        // General chat - use AI or fallback
+                        addBotMessage(
+                            `That's a great question, ${conversationState.firstName}! 🤔<br><br>For detailed answers, I recommend visiting our <a href="ai-learning.html" style="color:#38BDF8;">AI Learning page</a> or speaking with our counselors. Would you like me to connect you with a human advisor?`
+                            );
+                    }
+                }
+
+                async function saveLead(state) {
+                    try {
+                        await apiCall('/sankalp-sathi/save-lead', {
+                            method: 'POST',
+                            body: JSON.stringify({
+                                firstName: state.firstName,
+                                class: state.class,
+                                interest: state.interest,
+                                phone: state.phone,
+                                parentName: state.parentName,
+                                city: state.city,
+                                email: state.email,
+                                messages: state.messages,
+                            }),
+                        });
+                    } catch (err) {
+                        console.error('Lead save error:', err);
+                    }
+                }
+            }
+
+            // --- ADMIN DASHBOARD ---
+            function initAdminDashboard() {
+                const sidebarToggle = document.getElementById('sidebarToggle');
+                const adminSidebar = document.getElementById('adminSidebar');
+                if (sidebarToggle && adminSidebar) {
+                    sidebarToggle.addEventListener('click', () => {
+                        adminSidebar.classList.toggle('open');
+                    });
+                }
+
+                // Load dashboard stats
+                loadAdminStats();
+                loadAdminLeads();
+                loadAdminResults();
+            }
+
+            async function loadAdminStats() {
+                try {
+                    const data = await apiCall('/admin/stats');
+                    const container = document.getElementById('adminStatsContainer');
+                    if (container && data.stats) {
+                        container.innerHTML = `
+                        <div class="cards-grid">
+                            <div class="card"><div class="metric-number">${data.stats.totalLeads || 0}</div><div class="metric-label">Total Leads</div></div>
+                            <div class="card"><div class="metric-number">${data.stats.totalStudents || 0}</div><div class="metric-label">Students</div></div>
+                            <div class="card"><div class="metric-number">${data.stats.totalResults || 0}</div><div class="metric-label">Results Published</div></div>
+                            <div class="card"><div class="metric-number">${data.stats.convertedLeads || 0}</div><div class="metric-label">Converted Leads</div></div>
+                        </div>`;
+                    }
+                } catch (err) {
+                    console.error('Stats error:', err);
+                }
+            }
+
+            async function loadAdminLeads() {
+                try {
+                    const data = await apiCall('/admin/leads');
+                    const container = document.getElementById('adminLeadsContainer');
+                    if (container && data.leads) {
+                        container.innerHTML = data.leads.map(lead => `
+                        <tr>
+                            <td>${lead.firstName || ''}</td>
+                            <td>${lead.class || ''}</td>
+                            <td>${lead.interest || ''}</td>
+                            <td>${lead.phone || ''}</td>
+                            <td>${lead.city || ''}</td>
+                            <td><span class="badge" style="background:${lead.score > 60 ? '#10b981' : lead.score > 30 ? '#f59e0b' : '#ef4444'};color:#fff;padding:0.25rem 0.6rem;border-radius:20px;font-size:0.75rem;">${lead.score || 0}</span></td>
+                            <td>${lead.status || 'pending'}</td>
+                            <td><button class="btn btn-primary" style="font-size:0.75rem;padding:0.3rem 0.8rem;" onclick="window.updateLeadStatus('${lead._id}','contacted')">Mark Contacted</button></td>
+                        </tr>`).join('');
+                    }
+                } catch (err) {
+                    console.error('Leads error:', err);
+                }
+            }
+
+            async function loadAdminResults() {
+                try {
+                    const data = await apiCall('/admin/results');
+                    const container = document.getElementById('adminResultsContainer');
+                    if (container && data.results) {
+                        container.innerHTML = data.results.map(r => `
+                        <tr>
+                            <td>${r.studentId || r.regNo || ''}</td>
+                            <td>${r.name || r.studentName || ''}</td>
+                            <td>${r.grade || r.class || ''}</td>
+                            <td>${r.percentage || ''}%</td>
+                            <td>${r.published ? '✅ Published' : '❌ Draft'}</td>
+                            <td><button class="btn btn-outline" style="font-size:0.75rem;padding:0.3rem 0.8rem;" onclick="window.togglePublish('${r._id}')">Toggle Publish</button></td>
+                        </tr>`).join('');
+                    }
+                } catch (err) {
+                    console.error('Results error:', err);
+                }
+            }
+
+            window.updateLeadStatus = async function(leadId, status) {
+                try {
+                    await apiCall(`/admin/leads/${leadId}`, {
+                        method: 'PATCH',
+                        body: JSON.stringify({ status }),
+                    });
+                    showToast('Lead status updated!', 'success');
+                    loadAdminLeads();
+                } catch (err) {
+                    showToast('Error updating lead', 'error');
+                }
+            };
+
+            window.togglePublish = async function(resultId) {
+                try {
+                    await apiCall(`/admin/results/${resultId}/toggle-publish`, { method: 'PATCH' });
+                    showToast('Result publish status toggled!', 'success');
+                    loadAdminResults();
+                } catch (err) {
+                    showToast('Error toggling publish', 'error');
+                }
+            };
+
+            // Admin: Add Result Form
+            const adminAddResultForm = document.getElementById('adminAddResultForm');
+            if (adminAddResultForm) {
+                adminAddResultForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(adminAddResultForm);
+                    const data = Object.fromEntries(formData.entries());
+
+                    // Parse subjects
+                    const subjectNames = data.subjectNames?.split(',').map(s => s.trim()) || [];
+                    const subjectMarks = data.subjectMarks?.split(',').map(m => parseInt(m.trim())) ||
+                        [];
+                    const subjects = subjectNames.map((name, i) => ({
+                        subject: name,
+                        marks: subjectMarks[i] || 0,
+                        maxMarks: 100,
+                    }));
+
+                    const payload = {
+                        regNo: data.regNo,
+                        studentId: data.regNo,
+                        name: data.studentName,
+                        fatherName: data.fatherName,
+                        dob: data.dob,
+                        grade: data.grade,
+                        class: data.grade,
+                        subjects,
+                        percentage: data.percentage || calculatePercentage(subjectMarks),
+                        rank: data.rank || 'N/A',
+                        remarks: data.remarks || 'Good',
+                    };
+
+                    try {
+                        await apiCall('/admin/results/add', {
+                            method: 'POST',
+                            body: JSON.stringify(payload),
+                        });
+                        showToast('Result added successfully!', 'success');
+                        adminAddResultForm.reset();
+                        loadAdminResults();
+                    } catch (err) {
+                        showToast(err.message || 'Error adding result', 'error');
+                    }
+                });
+            }
+
+            function calculatePercentage(marks) {
+                if (!marks.length) return 0;
+                const total = marks.reduce((a, b) => a + b, 0);
+                return ((total / (marks.length * 100)) * 100).toFixed(1);
+            }
+
+            // --- LOGIN ---
+            function initLogin() {
+                const loginForm = document.getElementById('loginForm');
+                if (loginForm) {
+                    loginForm.addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        const email = document.getElementById('loginEmail')?.value?.trim();
+                        const password = document.getElementById('loginPassword')?.value?.trim();
+
+                        if (!email || !password) {
+                            showToast('Please fill all fields', 'error');
+                            return;
+                        }
+
+                        try {
+                            const data = await apiCall('/login', {
+                                method: 'POST',
+                                body: JSON.stringify({ email, password }),
+                            });
+                            if (data.token) {
+                                setCookie('auth_token', data.token, 7);
+                                setCookie('user_role', data.role || 'student', 7);
+                                showToast('Login successful!', 'success');
+                                setTimeout(() => {
+                                    window.location.href = data.role === 'admin' ?
+                                        'admin-dashboard.html' : 'student-dashboard.html';
+                                }, 500);
+                            }
+                        } catch (err) {
+                            showToast(err.message || 'Login failed', 'error');
+                        }
+                    });
+                }
+            }
+
+            // --- REGISTER ---
+            function initRegister() {
+                const registerForm = document.getElementById('registerForm');
+                const sendOtpBtn = document.getElementById('sendOtpBtn');
+                const verifyOtpBtn = document.getElementById('verifyOtpBtn');
+
+                if (sendOtpBtn) {
+                    sendOtpBtn.addEventListener('click', async function() {
+                        const email = document.getElementById('regEmail')?.value?.trim();
+                        if (!email) {
+                            showToast('Please enter your email', 'error');
+                            return;
+                        }
+                        const allowedDomains = ['gmail.com', 'outlook.com', 'hotmail.com',
+                            'yahoo.com', 'icloud.com', 'proton.me', 'protonmail.com',
+                            'zoho.com', 'live.com'
+                        ];
+                        const domain = email.split('@')[1];
+                        if (!allowedDomains.includes(domain)) {
+                            showToast(
+                                'Please use a valid email provider (Gmail, Outlook, Yahoo, etc.)',
+                                'error');
+                            return;
+                        }
+                        try {
+                            await apiCall('/send-otp', {
+                                method: 'POST',
+                                body: JSON.stringify({ email }),
+                            });
+                            showToast('OTP sent to your email!', 'success');
+                            document.getElementById('otpSection')?.classList.remove('hidden');
+                            startOtpTimer(60, sendOtpBtn);
+                        } catch (err) {
+                            showToast(err.message || 'Error sending OTP', 'error');
+                        }
+                    });
+                }
+
+                if (verifyOtpBtn) {
+                    verifyOtpBtn.addEventListener('click', async function() {
+                        const email = document.getElementById('regEmail')?.value?.trim();
+                        const otp = document.getElementById('regOtp')?.value?.trim();
+                        if (!otp) {
+                            showToast('Please enter OTP', 'error');
+                            return;
+                        }
+                        try {
+                            await apiCall('/verify-otp', {
+                                method: 'POST',
+                                body: JSON.stringify({ email, otp }),
+                            });
+                            showToast('OTP verified! Complete your profile.', 'success');
+                            document.getElementById('profileSection')?.classList.remove(
+                                'hidden');
+                        } catch (err) {
+                            showToast(err.message || 'Invalid OTP', 'error');
+                        }
+                    });
+                }
+
+                if (registerForm) {
+                    registerForm.addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        const payload = {
+                            email: document.getElementById('regEmail')?.value?.trim(),
+                            name: document.getElementById('regName')?.value?.trim(),
+                            mobile: document.getElementById('regMobile')?.value?.trim(),
+                            class: document.getElementById('regClass')?.value,
+                            password: document.getElementById('regPassword')?.value,
+                        };
+                        if (!payload.password || payload.password.length < 6) {
+                            showToast('Password must be at least 6 characters', 'error');
+                            return;
+                        }
+                        try {
+                            const data = await apiCall('/register', {
+                                method: 'POST',
+                                body: JSON.stringify(payload),
+                            });
+                            if (data.token) {
+                                setCookie('auth_token', data.token, 7);
+                                setCookie('user_role', 'student', 7);
+                                showToast('Registration successful!', 'success');
+                                setTimeout(() => {
+                                    window.location.href = 'student-dashboard.html';
+                                }, 500);
+                            }
+                        } catch (err) {
+                            showToast(err.message || 'Registration failed', 'error');
+                        }
+                    });
+                }
+            }
+
+            function startOtpTimer(seconds, btn) {
+                let remaining = seconds;
+                btn.disabled = true;
+                const originalText = btn.textContent;
+                const timer = setInterval(() => {
+                    remaining--;
+                    btn.textContent = `Resend in ${remaining}s`;
+                    if (remaining <= 0) {
+                        clearInterval(timer);
+                        btn.disabled = false;
+                        btn.textContent = originalText;
+                    }
+                }, 1000);
+            }
+
+            // --- EXPOSE GLOBAL FUNCTIONS ---
+            window.loadAdminLeads = loadAdminLeads;
+            window.loadAdminResults = loadAdminResults;
+
+            console.log('✅ Sankalp Digital Pathshala - Frontend Initialized');
+            console.log('🔷 Premium AI-Powered Education Platform');
+            console.log('🤖 Sankalp Sathi AI Assistant Ready');
+        })();
+    </script>
+</body>
+</html>
