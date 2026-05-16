@@ -37,7 +37,6 @@
             --shadow-xl: 0 20px 50px rgba(0,0,0,0.15);
             --glow-primary: 0 0 30px rgba(56, 189, 248, 0.4);
         }
-
         *,
         *::before,
         *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -51,19 +50,14 @@
             min-height: 100vh;
             position: relative;
         }
-
         .bg-orb {
             position: fixed; border-radius: 50%; filter: blur(120px); opacity: 0.2;
             pointer-events: none; z-index: 0;
         }
         .bg-orb-1 { width: 500px; height: 500px; background: var(--glow); top: -120px; right: -80px; animation: floatOrb 22s infinite; }
         .bg-orb-2 { width: 400px; height: 400px; background: var(--accent); bottom: -90px; left: -60px; animation: floatOrb 20s infinite reverse; }
-        @keyframes floatOrb {
-            0%,100% { transform: translate(0,0) scale(1); }
-            50% { transform: translate(30px,-30px) scale(1.07); }
-        }
+        @keyframes floatOrb { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px,-30px) scale(1.07); } }
 
-        /* Navbar */
         .navbar {
             position: sticky; top: 0; z-index: 1000;
             background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(20px);
@@ -71,7 +65,7 @@
         }
         .nav-container { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 1rem; }
         .nav-logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
-        .nav-logo img { height: 42px; border-radius: 8px; }
+        .nav-logo img { height: 42px; border-radius: 8px; } /* blank src in HTML */
         .nav-logo span { font-weight: 700; font-size: 1.15rem; color: #fff; letter-spacing: -0.3px; }
         .nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; flex-wrap: wrap; }
         .nav-links a { color: #e2e8f0; text-decoration: none; padding: 0.5rem 0.85rem; border-radius: 2rem; font-size: 0.9rem; font-weight: 500; transition: var(--transition); }
@@ -90,94 +84,39 @@
             .hamburger { display: flex; }
         }
 
-        .page-hero {
-            position: relative; z-index: 1; padding: 4rem 1.5rem; text-align: center;
-            background: linear-gradient(135deg, rgba(56,189,248,0.03), rgba(79,70,229,0.03));
-        }
+        .page-hero { position: relative; z-index: 1; padding: 4rem 1.5rem; text-align: center; background: linear-gradient(135deg, rgba(56,189,248,0.03), rgba(79,70,229,0.03)); }
         .page-hero h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; color: var(--dark); margin-bottom: 1rem; }
         .page-hero h1 span { background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .page-hero p { font-size: 1.1rem; color: var(--gray-500); max-width: 650px; margin: 0 auto; }
 
         .section { max-width: 1300px; margin: 0 auto; padding: 2rem 1.5rem; position: relative; z-index: 1; }
 
-        /* Filter Buttons */
-        .filter-buttons {
-            display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem;
-        }
-        .filter-btn {
-            padding: 0.6rem 1.4rem; border-radius: 2.5rem; border: 2px solid var(--gray-200);
-            background: var(--white); font-weight: 600; font-size: 0.9rem; cursor: pointer;
-            transition: var(--transition); color: var(--gray-600); white-space: nowrap;
-        }
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--primary); border-color: var(--primary); color: #fff;
-            box-shadow: 0 4px 15px rgba(56,189,248,0.3);
-        }
+        .filter-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; }
+        .filter-btn { padding: 0.6rem 1.4rem; border-radius: 2.5rem; border: 2px solid var(--gray-200); background: var(--white); font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: var(--transition); color: var(--gray-600); white-space: nowrap; }
+        .filter-btn:hover, .filter-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; box-shadow: 0 4px 15px rgba(56,189,248,0.3); }
 
-        /* Masonry Grid */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.25rem;
-            align-items: start;
-        }
-        .gallery-item {
-            background: var(--white); border-radius: var(--radius-xl);
-            overflow: hidden; box-shadow: var(--shadow);
-            transition: var(--transition); border: 1px solid rgba(56,189,248,0.1);
-            display: flex; flex-direction: column;
-            cursor: pointer; break-inside: avoid;
-        }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; align-items: start; }
+        .gallery-item { background: var(--white); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid rgba(56,189,248,0.1); display: flex; flex-direction: column; cursor: pointer; }
         .gallery-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
-        .gallery-image {
-            width: 100%; min-height: 180px; background-size: cover;
-            background-position: center; position: relative;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 3rem; color: #fff;
-        }
-        .gallery-image::before {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.3));
-        }
-        .gallery-caption {
-            padding: 1rem 1.25rem; font-weight: 600; font-size: 0.9rem;
-            color: var(--gray-700); background: var(--white);
-            display: flex; align-items: center; gap: 0.4rem;
-        }
-        .gallery-caption span { font-size: 1.1rem; }
+        .gallery-image { width: 100%; min-height: 180px; position: relative; overflow: hidden; background: #f0f0f0; }
+        .gallery-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .gallery-caption { padding: 1rem 1.25rem; font-weight: 600; font-size: 0.9rem; color: var(--gray-700); background: var(--white); display: flex; align-items: center; gap: 0.4rem; }
 
-        /* Custom Heights for Masonry effect */
-        .gallery-item:nth-child(3n) .gallery-image { min-height: 240px; }
-        .gallery-item:nth-child(5n+2) .gallery-image { min-height: 200px; }
-        .gallery-item:nth-child(7n+4) .gallery-image { min-height: 260px; }
-
-        .footer {
-            background: var(--dark); color: #cbd5e1; padding: 3rem 1.5rem 1.5rem; position: relative; z-index: 1;
-        }
+        .footer { background: var(--dark); color: #cbd5e1; padding: 3rem 1.5rem 1.5rem; position: relative; z-index: 1; }
         .footer-grid { max-width: 1200px; margin: 0 auto 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 2rem; }
         .footer h4 { color: #fff; font-weight: 700; margin-bottom: 1rem; }
         .footer a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; display: block; margin-bottom: 0.4rem; transition: var(--transition); }
         .footer a:hover { color: var(--primary); }
         .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; font-size: 0.85rem; color: #64748b; }
 
-        .float-chat-btn {
-            position: fixed; bottom: 28px; right: 28px; z-index: 999;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: #fff; border: none; border-radius: 50px; padding: 0.85rem 1.5rem;
-            font-weight: 700; cursor: pointer; box-shadow: 0 8px 30px rgba(56,189,248,0.4);
-            display: flex; align-items: center; gap: 0.5rem; text-decoration: none;
-            font-size: 0.95rem; transition: var(--transition); animation: pulseBtn 2.5s infinite;
-        }
+        .float-chat-btn { position: fixed; bottom: 28px; right: 28px; z-index: 999; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; border: none; border-radius: 50px; padding: 0.85rem 1.5rem; font-weight: 700; cursor: pointer; box-shadow: 0 8px 30px rgba(56,189,248,0.4); display: flex; align-items: center; gap: 0.5rem; text-decoration: none; font-size: 0.95rem; transition: var(--transition); animation: pulseBtn 2.5s infinite; }
         .float-chat-btn:hover { box-shadow: 0 12px 40px rgba(56,189,248,0.55); transform: translateY(-2px); }
         @keyframes pulseBtn { 0%,100% { box-shadow: 0 8px 30px rgba(56,189,248,0.4); } 50% { box-shadow: 0 8px 50px rgba(56,189,248,0.65); } }
 
         @media(max-width:600px) {
             .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem; }
-            .gallery-image { min-height: 140px !important; font-size: 2rem; }
+            .gallery-image { min-height: 140px !important; }
             .filter-btn { padding: 0.4rem 1rem; font-size: 0.8rem; }
-        }
-        @media(max-width:400px) {
-            .float-chat-btn { bottom: 12px; right: 12px; padding: 0.6rem 1.2rem; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -188,8 +127,8 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
-                <img src="" alt="Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-                <span style="display:none;">🔷 SANKALP</span>
+                <!-- BLANK LOGO: yahan apna logo URL daalen -->
+                <img src="" alt="Logo">
                 <span>🔷 SANKALP DIGITAL PATHSHALA</span>
             </a>
             <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -212,7 +151,7 @@
 
     <section class="page-hero">
         <h1>Our <span>Gallery</span></h1>
-        <p>A glimpse into the vibrant life at Sankalp – smart classrooms, AI labs, robotics competitions, and joyful learning moments.</p>
+        <p>A glimpse into the vibrant life at Sankalp – smart classrooms, AI labs, robotics, and joyful learning moments.</p>
     </section>
 
     <section class="section">
@@ -229,7 +168,7 @@
         </div>
 
         <div class="gallery-grid" id="galleryGrid">
-            <!-- Gallery items will be populated by JS -->
+            <!-- dynamically populated with blank image placeholders -->
         </div>
     </section>
 
@@ -246,7 +185,6 @@
 
     <script>
         (function() {
-            // Navbar toggle
             const hamburger = document.getElementById('hamburger');
             const navLinks = document.getElementById('navLinks');
             if (hamburger && navLinks) {
@@ -265,38 +203,35 @@
                 const navbar = document.getElementById('navbar');
                 if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 40);
             });
+
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             document.querySelectorAll('.nav-links a').forEach(a => {
                 const href = a.getAttribute('href');
                 if (href === currentPage || (currentPage === '' && href === 'index.html')) a.classList.add('active');
                 else a.classList.remove('active');
             });
+
             const floatBtn = document.getElementById('floatChatBtn');
             if (floatBtn && currentPage.includes('sankalp-sathi')) floatBtn.style.display = 'none';
 
-            // Gallery data
+            // Gallery items with blank image placeholders
             const galleryItems = [
-                { category: 'classrooms', icon: '🖥️', caption: 'Smart Digital Classroom', bg: 'linear-gradient(135deg, #0F172A, #1E3A8A)' },
-                { category: 'classrooms', icon: '📚', caption: 'Interactive Learning Session', bg: 'linear-gradient(135deg, #1E3A8A, #3B82F6)' },
-                { category: 'ai', icon: '🧠', caption: 'AI Lab – Model Training', bg: 'linear-gradient(135deg, #4F46E5, #7C3AED)' },
-                { category: 'ai', icon: '🤖', caption: 'Humanoid Robot Demo', bg: 'linear-gradient(135deg, #06B6D4, #38BDF8)' },
-                { category: 'robotics', icon: '🦾', caption: 'Robotics Arm Project', bg: 'linear-gradient(135deg, #DC2626, #B91C1C)' },
-                { category: 'robotics', icon: '🚀', caption: 'Drone Building Workshop', bg: 'linear-gradient(135deg, #0F172A, #1E293B)' },
-                { category: 'workshops', icon: '🔧', caption: 'STEM Workshop', bg: 'linear-gradient(135deg, #F59E0B, #D97706)' },
-                { category: 'workshops', icon: '💻', caption: 'Coding Bootcamp', bg: 'linear-gradient(135deg, #10B981, #059669)' },
-                { category: 'events', icon: '🎤', caption: 'Annual Tech Fest', bg: 'linear-gradient(135deg, #EC4899, #BE185D)' },
-                { category: 'events', icon: '🎓', caption: 'Graduation Ceremony', bg: 'linear-gradient(135deg, #8B5CF6, #6D28D9)' },
-                { category: 'awards', icon: '🏆', caption: 'National Robotics Award', bg: 'linear-gradient(135deg, #D97706, #B45309)' },
-                { category: 'awards', icon: '🥇', caption: 'JEE Topper Felicitation', bg: 'linear-gradient(135deg, #1E3A8A, #3B82F6)' },
-                { category: 'visits', icon: '🏭', caption: 'Industry Visit – Tech Park', bg: 'linear-gradient(135deg, #065F46, #047857)' },
-                { category: 'visits', icon: '🔭', caption: 'Observatory Trip', bg: 'linear-gradient(135deg, #0F172A, #334155)' },
-                { category: 'student-activities', icon: '🎨', caption: 'Art & Creativity Corner', bg: 'linear-gradient(135deg, #F97316, #EA580C)' },
-                { category: 'student-activities', icon: '⚽', caption: 'Sports Meet', bg: 'linear-gradient(135deg, #2563EB, #1D4ED8)' },
-                { category: 'classrooms', icon: '📐', caption: 'Maths Lab Session', bg: 'linear-gradient(135deg, #7C3AED, #5B21B6)' },
-                { category: 'ai', icon: '📊', caption: 'AI Analytics Dashboard', bg: 'linear-gradient(135deg, #0F766E, #115E59)' },
-                { category: 'robotics', icon: '🔌', caption: 'IoT Sensor Project', bg: 'linear-gradient(135deg, #991B1B, #7F1D1D)' },
-                { category: 'events', icon: '🎭', caption: 'Cultural Fest', bg: 'linear-gradient(135deg, #BE185D, #9D174D)' },
-                { category: 'awards', icon: '📜', caption: 'Merit Certificate Ceremony', bg: 'linear-gradient(135deg, #4338CA, #3730A3)' }
+                { category: 'classrooms', caption: 'Smart Digital Classroom', img: '' },
+                { category: 'classrooms', caption: 'Interactive Learning Session', img: '' },
+                { category: 'ai', caption: 'AI Lab – Model Training', img: '' },
+                { category: 'ai', caption: 'Humanoid Robot Demo', img: '' },
+                { category: 'robotics', caption: 'Robotics Arm Project', img: '' },
+                { category: 'robotics', caption: 'Drone Building Workshop', img: '' },
+                { category: 'workshops', caption: 'STEM Workshop', img: '' },
+                { category: 'workshops', caption: 'Coding Bootcamp', img: '' },
+                { category: 'events', caption: 'Annual Tech Fest', img: '' },
+                { category: 'events', caption: 'Graduation Ceremony', img: '' },
+                { category: 'awards', caption: 'National Robotics Award', img: '' },
+                { category: 'awards', caption: 'JEE Topper Felicitation', img: '' },
+                { category: 'visits', caption: 'Industry Visit – Tech Park', img: '' },
+                { category: 'visits', caption: 'Observatory Trip', img: '' },
+                { category: 'student-activities', caption: 'Art & Creativity Corner', img: '' },
+                { category: 'student-activities', caption: 'Sports Meet', img: '' }
             ];
 
             const galleryGrid = document.getElementById('galleryGrid');
@@ -305,60 +240,26 @@
                 const filtered = filter === 'all' ? galleryItems : galleryItems.filter(item => item.category === filter);
                 galleryGrid.innerHTML = filtered.map(item => `
                     <div class="gallery-item" data-category="${item.category}">
-                        <div class="gallery-image" style="background: ${item.bg};">
-                            <span style="position:relative;z-index:1;">${item.icon}</span>
+                        <div class="gallery-image">
+                            <img src="${item.img}" alt="${item.caption}" loading="lazy">
                         </div>
                         <div class="gallery-caption"><span>📷</span> ${item.caption}</div>
                     </div>
                 `).join('');
             }
 
-            // Initial render
             renderGallery('all');
 
-            // Filter buttons
             const filterBtns = document.querySelectorAll('.filter-btn');
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     filterBtns.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
-                    const filter = btn.getAttribute('data-filter');
-                    renderGallery(filter);
+                    renderGallery(btn.getAttribute('data-filter'));
                 });
             });
 
-            // Reveal animation for gallery items
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            // Observe after render (use MutationObserver or set a short delay)
-            setTimeout(() => {
-                document.querySelectorAll('.gallery-item').forEach(el => {
-                    el.style.opacity = '0';
-                    el.style.transform = 'translateY(20px)';
-                    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    observer.observe(el);
-                });
-            }, 50);
-
-            // Re-observe after filter change
-            galleryGrid.addEventListener('DOMSubtreeModified', () => {
-                document.querySelectorAll('.gallery-item').forEach(el => {
-                    if (!el.style.opacity || el.style.opacity === '1') return;
-                    el.style.opacity = '0';
-                    el.style.transform = 'translateY(20px)';
-                    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    observer.observe(el);
-                });
-            });
-
-            console.log('✅ Gallery page ready – Sankalp Digital Pathshala');
+            console.log('✅ Gallery with blank image placeholders ready – Sankalp Digital Pathshala');
         })();
     </script>
 </body>
