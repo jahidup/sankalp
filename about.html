@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Sankalp Digital Pathshala - Mission, Vision, Founder Message, Smart Infrastructure & Future Goals">
+    <title>About Us | Sankalp Digital Pathshala</title>
+    <!-- Shared Styles (extracted from index.html for consistency) -->
+    <style>
+        :root {
+            --primary: #38BDF8;
+            --primary-dark: #06B6D4;
+            --accent: #4F46E5;
+            --glow: #7DD3FC;
+            --dark: #0F172A;
+            --light: #F8FCFF;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --radius-sm: 0.5rem;
+            --radius: 0.75rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1.5rem;
+            --radius-2xl: 2rem;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
+            --glow-primary: 0 0 30px rgba(56, 189, 248, 0.4);
+            --glow-accent: 0 0 30px rgba(79, 70, 229, 0.35);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+        body {
+            font-family: var(--font-sans);
+            background: var(--light);
+            color: var(--gray-800);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Animated background orbs */
+        .bg-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .bg-orb-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--glow);
+            top: -100px;
+            right: -80px;
+            animation: floatOrb 25s ease-in-out infinite;
+        }
+        .bg-orb-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            bottom: -80px;
+            left: -50px;
+            animation: floatOrb 20s ease-in-out infinite reverse;
+        }
+        @keyframes floatOrb {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(30px, -30px) scale(1.08);
+            }
+        }
+
+        /* Navbar (identical to index) */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0 1.5rem;
+            transition: var(--transition);
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+            gap: 1rem;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+        .nav-logo img {
+            height: 42px;
+            width: auto;
+            border-radius: 8px;
+        }
+        .nav-logo span {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #fff;
+            letter-spacing: -0.3px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            padding: 0.5rem 0.85rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: rgba(56, 189, 248, 0.2);
+            color: #fff;
+        }
+        .btn-nav {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff !important;
+            padding: 0.6rem 1.4rem !important;
+            border-radius: 2rem !important;
+            font-weight: 600 !important;
+            box-shadow: var(--glow-primary);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            width: 26px;
+            height: 2.5px;
+            background: #fff;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media(max-width:1024px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -320px;
+                width: 300px;
+                height: 100vh;
+                background: rgba(15, 23, 42, 0.97);
+                backdrop-filter: blur(30px);
+                flex-direction: column;
+                padding: 5rem 1.5rem 2rem;
+                gap: 0.5rem;
+                transition: var(--transition);
+                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4);
+                overflow-y: auto;
+            }
+            .nav-links.open {
+                right: 0;
+            }
+            .nav-links a {
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+                width: 100%;
+                text-align: left;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* Hero banner for about page */
+        .page-hero {
+            position: relative;
+            z-index: 1;
+            padding: 4rem 1.5rem;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.03), rgba(56, 189, 248, 0.05));
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        .page-hero h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .page-hero p {
+            font-size: 1.1rem;
+            color: var(--gray-500);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .section-header h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .section-header p {
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0.5rem auto 0;
+        }
+
+        /* Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 2rem 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .card:hover::before {
+            opacity: 1;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        .card-icon {
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+        }
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        /* Founder / Message block */
+        .founder-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            background: var(--white);
+            border-radius: var(--radius-2xl);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+        }
+        .founder-img {
+            width: 100%;
+            max-width: 300px;
+            aspect-ratio: 1/1;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(79, 70, 229, 0.2));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            margin: 0 auto;
+        }
+        .founder-quote {
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin: 1rem 0;
+        }
+        .founder-name {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Timeline style for goals */
+        .goals-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .goal-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .goal-marker {
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            margin-top: 0.5rem;
+            box-shadow: 0 0 15px var(--glow);
+            flex-shrink: 0;
+        }
+        .goal-content h4 {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+        .goal-content p {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: #cbd5e1;
+            padding: 3rem 1.5rem 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .footer h4 {
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.4rem;
+            transition: var(--transition);
+        }
+        .footer a:hover {
+            color: var(--primary);
+        }
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* Floating Chat Button (same as index) */
+        .float-chat-btn {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 0.85rem 1.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(56, 189, 248, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            animation: pulseBtn 2.5s ease-in-out infinite;
+        }
+        .float-chat-btn:hover {
+            box-shadow: 0 12px 40px rgba(56, 189, 248, 0.55);
+            transform: translateY(-2px);
+        }
+        @keyframes pulseBtn {
+            0%,
+            100% {
+                box-shadow: 0 8px 30px rgba(56, 189, 248, 0.4);
+            }
+            50% {
+                box-shadow: 0 8px 50px rgba(56, 189, 248, 0.65);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media(max-width:768px) {
+            .founder-block {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            .founder-img {
+                max-width: 200px;
+                font-size: 3.5rem;
+            }
+            .goal-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        @media(max-width:480px) {
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+            .card {
+                padding: 1.25rem;
+            }
+            .float-chat-btn {
+                bottom: 12px;
+                right: 12px;
+                padding: 0.6rem 1.1rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Orbs -->
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="" alt="Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <span style="display:none;">🔷 SANKALP</span>
+                <span>🔷 SANKALP DIGITAL PATHSHALA</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="ai-learning.html">AI Learning</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="admissions.html" class="btn-nav">Enroll Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>About <span>Sankalp Digital Pathshala</span></h1>
+        <p>Where traditional academic excellence meets future-ready AI innovation, shaping the leaders of tomorrow.</p>
+    </section>
+
+    <!-- Institute Introduction -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Our Story</h2>
+            <p>Redefining education through technology and compassion</p>
+        </div>
+        <div style="max-width:800px;margin:0 auto;text-align:center;">
+            <p style="font-size:1.05rem;color:var(--gray-600);line-height:1.8;">
+                Sankalp Digital Pathshala was founded with a singular vision: to bridge the gap between conventional rote learning and the demands of a rapidly evolving digital world. Born from the belief that every student deserves access to <strong>world-class AI-powered education</strong>, we combine rigorous academic preparation (JEE, NEET, CBSE) with cutting-edge training in robotics, coding, and artificial intelligence. Our campus is not just a school — it's an innovation ecosystem where curiosity meets computation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="section" style="background:rgba(56,189,248,0.02);border-radius:var(--radius-2xl);">
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>Our Mission</h3>
+                <p>To empower every learner with personalized, AI-driven academic support, 21st-century skills, and an unshakeable moral foundation. We strive to create an environment where students don't just crack exams — they crack the code of their own potential.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔭</div>
+                <h3>Our Vision</h3>
+                <p>To become India's most trusted premium smart education platform, recognized for transforming ordinary students into extraordinary innovators, critical thinkers, and compassionate leaders who will shape a sustainable, tech-enabled future.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Message -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Message from the Founder</h2>
+        </div>
+        <div class="founder-block">
+            <div class="founder-img">👨‍🏫</div>
+            <div>
+                <p class="founder-quote">"Education is no longer about memorizing facts; it's about learning how to learn, unlearn, and relearn. At Sankalp Digital Pathshala, we've built an ecosystem where AI amplifies human potential, not replaces it. Every child is a universe of possibilities — our job is to give them the telescope and the starship."</p>
+                <p class="founder-name">— Dr. A. Sharma, Founder & Chief Mentor</p>
+                <p style="color:var(--gray-500);font-size:0.9rem;">Ph.D. in AI & Education, Former IIT Faculty</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Philosophy -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Our Teaching Philosophy</h2>
+            <p>The Sankalp S.P.A.R.K. framework</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🧠</div>
+                <h3>Smart Personalization</h3>
+                <p>AI algorithms adapt to each student's pace and style, ensuring no one is left behind.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h3>Practical Application</h3>
+                <p>Hands-on labs, real-world projects, and robotics kits turn theory into tangible skills.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <h3>Analytics-Driven</h3>
+                <p>Real-time dashboards track progress, predict weaknesses, and celebrate improvements.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">❤️</div>
+                <h3>Resilience & Values</h3>
+                <p>We nurture emotional intelligence, ethics, and a growth mindset alongside academics.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔗</div>
+                <h3>Knowledge Connect</h3>
+                <p>Interdisciplinary learning links subjects to current affairs, technology, and future careers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infrastructure & Smart Classrooms -->
+    <section class="section">
+        <div class="section-header">
+            <h2>World-Class Infrastructure</h2>
+            <p>Designed for the next generation of learning</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🖥️</div>
+                <h3>AI-Powered Smart Classrooms</h3>
+                <p>Interactive digital boards, voice-controlled assistants, and live AI translation for multilingual education.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤖</div>
+                <h3>Robotics & STEM Labs</h3>
+                <p>Fully equipped with Arduino, Raspberry Pi, 3D printers, and drone kits for experiential learning.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📡</div>
+                <h3>High-Speed Campus Network</h3>
+                <p>1 Gbps fiber connectivity, cloud-based labs, and seamless access to global learning resources.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Digital Library & VR Zone</h3>
+                <p>Thousands of e-books, VR history tours, and 3D model explorations for immersive study.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Goals -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Our Future Goals</h2>
+            <p>Building the roadmap to 2030 and beyond</p>
+        </div>
+        <div class="goals-list">
+            <div class="goal-item">
+                <div class="goal-marker"></div>
+                <div class="goal-content">
+                    <h4>🌐 Pan-India AI Learning Hubs</h4>
+                    <p>Establish 50+ hybrid digital centers across Tier 2/3 cities, making premium AI education accessible to every corner of the country.</p>
+                </div>
+            </div>
+            <div class="goal-item">
+                <div class="goal-marker"></div>
+                <div class="goal-content">
+                    <h4>🧑‍🚀 Student Satellite Program</h4>
+                    <p>Collaborate with ISRO and private space startups to launch a student-built nanosatellite, integrating STEM with real space science.</p>
+                </div>
+            </div>
+            <div class="goal-item">
+                <div class="goal-marker"></div>
+                <div class="goal-content">
+                    <h4>🤖 AI Co-Teacher in Every Classroom</h4>
+                    <p>Deploy advanced AI teaching assistants that provide instant doubt-solving, personalized worksheets, and emotional support to students.</p>
+                </div>
+            </div>
+            <div class="goal-item">
+                <div class="goal-marker"></div>
+                <div class="goal-content">
+                    <h4>🎓 100% Scholarship for Meritorious</h4>
+                    <p>Expand our scholarship fund to ensure no talented student misses opportunities due to financial constraints.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4>Sankalp Digital Pathshala</h4>
+                <p style="font-size:0.85rem;">Premium AI-powered education for the next generation of innovators and achievers.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="programs.html">Programs</a>
+                <a href="results.html">Results</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div>
+                <h4>Programs</h4>
+                <a href="programs.html">Foundation (6-8)</a>
+                <a href="programs.html">JEE Preparation</a>
+                <a href="programs.html">NEET Coaching</a>
+                <a href="ai-learning.html">AI & Robotics</a>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <a href="contact.html">📧 Email Us</a>
+                <a href="contact.html">📞 Call Us</a>
+                <a href="sankalp-sathi.html">🤖 Sankalp Sathi</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Sankalp Digital Pathshala. All rights reserved. | AI-Powered Premium Education Platform
+        </div>
+    </footer>
+
+    <!-- Floating Chat Button (global) -->
+    <a href="sankalp-sathi.html" class="float-chat-btn" id="floatChatBtn">
+        🤖 Talk to Sankalp Sathi
+    </a>
+
+    <!-- Shared JavaScript (app.js) -->
+    <script>
+        (function() {
+            // Navbar toggle (identical to index)
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navLinks.classList.toggle('open');
+                });
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('open');
+                    });
+                });
+            }
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', () => {
+                const navbar = document.getElementById('navbar');
+                if (navbar) {
+                    navbar.classList.toggle('scrolled', window.scrollY > 40);
+                }
+            });
+
+            // Active nav link detection
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(a => {
+                const href = a.getAttribute('href');
+                if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+                    a.classList.add('active');
+                } else {
+                    a.classList.remove('active');
+                }
+            });
+
+            // Hide floating button if on chatbot page
+            const floatBtn = document.getElementById('floatChatBtn');
+            if (floatBtn && currentPage.includes('sankalp-sathi')) {
+                floatBtn.style.display = 'none';
+            }
+
+            // Optional: smooth reveal animation for cards on scroll
+            const observerOptions = { threshold: 0.1 };
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.card, .founder-block, .goal-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                revealObserver.observe(el);
+            });
+
+            console.log('✅ About page initialized – Sankalp Digital Pathshala');
+        })();
+    </script>
+</body>
+</html>
